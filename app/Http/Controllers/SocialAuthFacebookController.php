@@ -28,4 +28,14 @@ class SocialAuthFacebookController extends Controller
         auth()->login($user);
         return redirect()->to('/home');
     }
+
+    /**
+     * Deauths user after he/she removed app right on Facebook
+     *
+     * @param SocialFacebookAccountService $service
+     */
+    public function deauth(SocialFacebookAccountService $service)
+    {
+        $service->deauthUser(request('signed_request'));
+    }
 }

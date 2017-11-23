@@ -19,5 +19,6 @@ Auth::routes();
 
 Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
+Route::post('/deauth', 'SocialAuthFacebookController@deauth');
 
 Route::get('/home', 'HomeController@index')->name('home');
