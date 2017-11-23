@@ -13,9 +13,9 @@ Additionally, a user long lived access token is saved in the database after his 
 
 ## Requirements
 
-PHP 7.0+
-MySQL 5.6
-Composer
+- PHP 7.0+
+- MySQL 5.6
+- Composer
 
 ## Deploy
 
@@ -27,7 +27,7 @@ Composer
 - Configure your Developers Facebook account: get `client_id` and `client_secret`. Put these parameters in `.env`.
 Example can be found in `.env.example`
 - Fill the "Site URL" in "Developers Facebook" with your host info, e.g. "http://localhost:8000"
-- Fill the "Deauthorize Callback URL" in "Developers Facebook" with your deauth URL, e.g. "http://localhost:8000/deauth"
+- Fill the "Deauthorize Callback URL" in "Developers Facebook" with your deauth URL, e.g. "http://localhost:8000/api/facebook/deauth"
 - Fill the "Valid OAuth redirect URIs" with your host info, e.g. "http://localhost:8000"
 - Set web server root to `public/index.php`. For dev environment you can just use `php artisan serve`
 
