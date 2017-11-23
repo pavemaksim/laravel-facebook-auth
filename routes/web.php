@@ -17,8 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/redirect', 'SocialAuthFacebookController@redirect');
-Route::get('/callback', 'SocialAuthFacebookController@callback');
-Route::post('/deauth', 'SocialAuthFacebookController@deauth');
+Route::prefix('api')->group(function () {
+    Route::prefix('facebook')->group(function () {
+        Route::get('login', 'SocialAuthFacebookController@redirect')->name('facebookLogin');
+        Route::get('callback', 'SocialAuthFacebookController@callback')->name('facebookCallback');
+        Route::post('deauth', 'SocialAuthFacebookController@deauth');
+    });
+});
 
 Route::get('/home', 'HomeController@index')->name('home');

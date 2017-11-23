@@ -30,3 +30,10 @@ Example can be found in `.env.example`
 - Fill the "Deauthorize Callback URL" in "Developers Facebook" with your deauth URL, e.g. "http://localhost:8000/deauth"
 - Fill the "Valid OAuth redirect URIs" with your host info, e.g. "http://localhost:8000"
 - Set web server root to `public/index.php`. For dev environment you can just use `php artisan serve`
+
+# Design approaches
+
+- I keep Facebook Callback URL in services config as well because I want to keep it simple for this simple app for now.
+Another approach with a "ConfigServiceProvider" can be considered for production: https://github.com/laravel/framework/issues/7671
+
+
