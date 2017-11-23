@@ -35,7 +35,6 @@ class SocialFacebookAccountService
                     'email' => $providerUser->getEmail(),
                     'name' => $providerUser->getName(),
                     'avatar' => $providerUser->getAvatar(),
-                    'password' => md5(rand(1,10000)),
                 ]);
             }
             $account->user()->associate($user);
