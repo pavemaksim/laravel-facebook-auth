@@ -9,6 +9,13 @@ use Laravel\Socialite\Contracts\User as ProviderUser;
 
 class SocialFacebookAccountService
 {
+    /**
+     * Creates or retrieves the user
+     * While creating the user we save facebook account data
+     *
+     * @param ProviderUser $providerUser
+     * @return mixed
+     */
     public function createOrGetUser(ProviderUser $providerUser)
     {
         $account = SocialFacebookAccount::whereProvider('facebook')
