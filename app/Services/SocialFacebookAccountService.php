@@ -19,7 +19,8 @@ class SocialFacebookAccountService
         } else {
             $account = new SocialFacebookAccount([
                 'provider_user_id' => $providerUser->getId(),
-                'provider' => 'facebook'
+                'provider' => 'facebook',
+                'token' => $providerUser->token
             ]);
             $user = User::whereEmail($providerUser->getEmail())->first();
             if (!$user) {
