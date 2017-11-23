@@ -44,6 +44,11 @@ class SocialFacebookAccountService
         }
     }
 
+    /**
+     * Deauth a user if he/she removes an app on Facebook
+     *
+     * @param $signedRequest
+     */
     public function deauthUser($signedRequest)
     {
         $data = $this->parseSignedRequest($signedRequest);
