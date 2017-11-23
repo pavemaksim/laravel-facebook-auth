@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <p>
+                        Hello, {{ Auth::user()->name }}
+                    </p>
+                    <img src="{{ Auth::user()->avatar }}">
                 </div>
             </div>
         </div>
